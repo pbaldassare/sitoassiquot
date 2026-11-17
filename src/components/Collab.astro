@@ -46,14 +46,14 @@ const d = c.diagram;
 
           <rect x="165" y="16" width="190" height="66" rx="10" class="fill-white"></rect>
           <text x="260" y="40" text-anchor="middle" class="fill-steel" font-size="12" font-weight="600">Livello 1</text>
-          <text x="260" y="66" text-anchor="middle" class="fill-navy-800" font-size="21" font-weight="800" style="font-stretch:125%">{d.tariffa}</text>
+          <text x="260" y="66" text-anchor="middle" class="fill-navy-800" font-size="21" font-weight="700" style="font-family:var(--font-display)">{d.tariffa}</text>
 
           <rect x="272" y="94" width="98" height="26" rx="5" class="fill-crimson-700"></rect>
           <text x="321" y="112" text-anchor="middle" class="fill-white" font-size="12.5" font-weight="700">{d.condizioni}</text>
 
           <rect x="145" y="132" width="230" height="66" rx="10" class="fill-navy-800 stroke-navy-300" stroke-width="1.5"></rect>
           <text x="260" y="156" text-anchor="middle" class="fill-navy-300" font-size="12" font-weight="600">Livello 2</text>
-          <text x="260" y="182" text-anchor="middle" class="fill-white" font-size="21" font-weight="800" style="font-stretch:125%">{d.convenzione}</text>
+          <text x="260" y="182" text-anchor="middle" class="fill-white" font-size="21" font-weight="700" style="font-family:var(--font-display)">{d.convenzione}</text>
 
           {
             d.istanze.map((name, i) => {
@@ -62,7 +62,7 @@ const d = c.diagram;
                 <g>
                   <rect x={cx - 74} y="288" width="148" height="92" rx="10" class="fill-navy-950 stroke-navy-600" stroke-width="1.5" />
                   <text x={cx} y="312" text-anchor="middle" class="fill-navy-300" font-size="12" font-weight="600">Livello 3 · istanza</text>
-                  <text x={cx} y="338" text-anchor="middle" class="fill-white" font-size="17" font-weight="800" style="font-stretch:112%">
+                  <text x={cx} y="338" text-anchor="middle" class="fill-white" font-size="17" font-weight="700" style="font-family:var(--font-display)">
                     {name}
                   </text>
                   {[0, 1, 2].map((k) => (

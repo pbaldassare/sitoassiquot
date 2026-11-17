@@ -1,7 +1,8 @@
 ---
-// Font self-hosted (Archivo variabile, assi peso e larghezza): niente richieste a Google (prestazioni e GDPR)
+// Font self-hosted (Schibsted Grotesk per i titoli, Archivo per il testo): niente richieste a Google (prestazioni e GDPR)
 import '@fontsource-variable/archivo/wdth.css';
-import fontWdth from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
+import '@fontsource-variable/schibsted-grotesk/wght.css';
+import fontDisplay from '@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2?url';
 import '@/styles/global.css';
 import site from '@/content/site.it.json';
 import Header from '@/components/Header.astro';
@@ -103,7 +104,7 @@ const jsonLd = [
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="preload" href={fontWdth} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={fontDisplay} as="font" type="font/woff2" crossorigin />
 
     <script is:inline>
       document.documentElement.classList.add('js');

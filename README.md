@@ -97,7 +97,7 @@ Da confermare: l'email `info@assiquot.it` (segnaposto) e il dominio `assiquot.it
   e si riapre da "Preferenze cookie" nel footer e nella privacy.
 - Per attivare statistiche in futuro, caricale solo dopo il consenso: ascolta l'evento `aq:consent` (`event.detail.stats`)
   o leggi `window.aqConsent`.
-- Font self-hosted (`@fontsource-variable/archivo`): nessuna connessione a Google.
+- Font self-hosted (`@fontsource-variable/schibsted-grotesk` per i titoli, `@fontsource-variable/archivo` per il testo): nessuna connessione a Google.
 
 ## Brand
 

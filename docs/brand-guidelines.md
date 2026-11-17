@@ -33,8 +33,8 @@ all'azione principale e alle evidenze.
 
 ## 4. Tipografia
 
-**Archivo** variabile (self-hosted). Titoli in Archivo **largo** (`font-stretch: 125%`, peso 800): ricorda le lettere
-larghe e squadrate del logo. Testo in Archivo normale. Numeri in cifre tabellari (`.num`).
+Titoli, etichette e bottoni in **Schibsted Grotesk** (peso 700, tracking -0.03em): un grottesco da testata, sobrio e
+professionale. Testo corrente in **Archivo**. Entrambi variabili e self-hosted. Numeri in cifre tabellari (`.num`).
 
 ## 5. Logo
 
