@@ -1,0 +1,98 @@
+---
+import site from '@/content/site.it.json';
+import Icon from '@/components/Icon.astro';
+const c = site.collab;
+const d = c.diagram;
+---
+
+<section id="reti" class="on-navy section scroll-mt-16 bg-navy-900 text-white" aria-labelledby="collab-title">
+  <div class="container-content">
+    <div class="grid gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+      <div>
+        <h2 id="collab-title" class="display h-section">{c.title}</h2>
+        <p class="lead mt-6 text-navy-100">{c.intro}</p>
+
+        <ol class="mt-10 border-t border-white/15">
+          {
+            c.levels.map((lvl) => (
+              <li class="grid grid-cols-[3rem_1fr] gap-4 border-b border-white/15 py-5">
+                <span class="display num text-[1.75rem] leading-none text-crimson-300">{lvl.n}</span>
+                <div>
+                  <h3 class="wide text-xl font-bold">{lvl.name}</h3>
+                  <p class="mt-1 text-navy-100">{lvl.text}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
+      <!-- Schema a tre livelli: tariffa → convenzione → istanze -->
+      <figure class="self-center">
+        <svg viewBox="0 0 520 410" class="h-auto w-full" role="img" aria-labelledby="collab-diagram-title" font-family="inherit">
+          <title id="collab-diagram-title">{d.title}</title>
+          <g class="stroke-navy-600" stroke-width="2" fill="none">
+            <line x1="260" y1="82" x2="260" y2="130"></line>
+            <path d="M260 198 V 238 H 90 V 282"></path>
+            <path d="M260 198 V 282"></path>
+            <path d="M260 198 V 238 H 430 V 282"></path>
+          </g>
+          <g class="fill-navy-600">
+            <path d="M254 124 L260 134 L266 124 Z"></path>
+            <path d="M84 276 L90 286 L96 276 Z"></path>
+            <path d="M254 276 L260 286 L266 276 Z"></path>
+            <path d="M424 276 L430 286 L436 276 Z"></path>
+          </g>
+
+          <rect x="165" y="16" width="190" height="66" rx="10" class="fill-white"></rect>
+          <text x="260" y="40" text-anchor="middle" class="fill-steel" font-size="12" font-weight="600">Livello 1</text>
+          <text x="260" y="66" text-anchor="middle" class="fill-navy-800" font-size="21" font-weight="800" style="font-stretch:125%">{d.tariffa}</text>
+
+          <rect x="272" y="94" width="98" height="26" rx="5" class="fill-crimson-700"></rect>
+          <text x="321" y="112" text-anchor="middle" class="fill-white" font-size="12.5" font-weight="700">{d.condizioni}</text>
+
+          <rect x="145" y="132" width="230" height="66" rx="10" class="fill-navy-800 stroke-navy-300" stroke-width="1.5"></rect>
+          <text x="260" y="156" text-anchor="middle" class="fill-navy-300" font-size="12" font-weight="600">Livello 2</text>
+          <text x="260" y="182" text-anchor="middle" class="fill-white" font-size="21" font-weight="800" style="font-stretch:125%">{d.convenzione}</text>
+
+          {
+            d.istanze.map((name, i) => {
+              const cx = [90, 260, 430][i];
+              return (
+                <g>
+                  <rect x={cx - 74} y="288" width="148" height="92" rx="10" class="fill-navy-950 stroke-navy-600" stroke-width="1.5" />
+                  <text x={cx} y="312" text-anchor="middle" class="fill-navy-300" font-size="12" font-weight="600">Livello 3 · istanza</text>
+                  <text x={cx} y="338" text-anchor="middle" class="fill-white" font-size="17" font-weight="800" style="font-stretch:112%">
+                    {name}
+                  </text>
+                  {[0, 1, 2].map((k) => (
+                    <rect x={cx - 30 + k * 21} y="354" width="17" height="8" rx="2" class={k <= (2 - i) % 3 ? 'fill-crimson-300' : 'fill-navy-600'} />
+                  ))}
+                </g>
+              );
+            })
+          }
+          <text x="260" y="404" text-anchor="middle" class="fill-navy-300" font-size="13">{d.caption}</text>
+        </svg>
+      </figure>
+    </div>
+
+    <div class="mt-16 grid gap-5 lg:grid-cols-2">
+      {
+        c.cases.map((k) => (
+          <div class="rounded-card bg-navy-800 p-7 sm:p-8">
+            <h3 class="wide text-xl font-bold">{k.title}</h3>
+            <p class="mt-2 text-navy-100">{k.text}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-10">
+      <a href={c.cta.href} class="btn btn-light">
+        {c.cta.label}
+        <Icon name="arrow-right" class="icon h-5 w-5" />
+      </a>
+    </div>
+  </div>
+</section>

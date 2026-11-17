@@ -1,0 +1,53 @@
+---
+import site from '@/content/site.it.json';
+import Logo from '@/components/Logo.astro';
+const f = site.footer;
+const year = new Date().getFullYear();
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const fix = (href: string) => (href.startsWith('#') && !isHome ? '/' + href : href);
+---
+
+<footer class="border-t-4 border-crimson-700 bg-white text-steel">
+  <div class="container-content py-16">
+    <div class="grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-[1.5fr_repeat(3,1fr)]">
+      <div class="col-span-2 lg:col-span-1">
+        <a href="/" class="inline-flex rounded-md" aria-label={`${site.meta.siteName} — home`}>
+          <Logo full height={58} class="h-auto w-full max-w-[17rem]" />
+        </a>
+        <p class="mt-5 max-w-xs text-[0.9375rem] leading-relaxed">{f.tagline}</p>
+      </div>
+      {
+        f.columns.map((col) => (
+          <nav aria-label={col.title}>
+            <h2 class="wide text-small font-bold tracking-[0.06em] text-navy-800 uppercase">{col.title}</h2>
+            <ul class="mt-4 space-y-1">
+              {col.links.map((l) => (
+                <li>
+                  <a href={fix(l.href)} class="inline-flex min-h-9 items-center text-[0.9375rem] text-graphite transition-colors hover:text-crimson-700">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+              {col.title === 'Legale' && (
+                <li>
+                  <button type="button" class="inline-flex min-h-9 cursor-pointer items-center text-[0.9375rem] text-graphite transition-colors hover:text-crimson-700" data-cookie-open>
+                    {f.cookiePrefs}
+                  </button>
+                </li>
+              )}
+            </ul>
+          </nav>
+        ))
+      }
+    </div>
+
+    <div class="mt-14 grid gap-6 border-t border-line pt-8 text-small lg:grid-cols-[1fr_auto] lg:items-end">
+      <address class="not-italic">
+        <p class="font-bold text-ink">{f.company.name}</p>
+        <p class="mt-1">{f.company.lines.join(' · ')}</p>
+        <p class="mt-1">{f.brandNote}</p>
+      </address>
+      <p>{f.copyright.replace('{year}', String(year))}</p>
+    </div>
+  </div>
+</footer>

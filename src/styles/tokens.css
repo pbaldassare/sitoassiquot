@@ -1,0 +1,73 @@
+/* =========================================================================
+   ASSIQUOT — design token
+   Fonte di verità: docs/brand-guidelines.md
+   Palette presa dal logo: blu di "ASSI", cremisi di "QUOT", grafite del "$€",
+   argento dell'alluminio spazzolato su cui il logo è stampato.
+   Nessun hex grezzo nei componenti: usa solo questi token.
+   ========================================================================= */
+@theme {
+  --color-*: initial;
+
+  /* Blu del logo ("ASSI", la freccia) */
+  --color-navy-950: #031a33; /* fondo più profondo: tabellone, footer */
+  --color-navy-900: #05264a; /* sezioni piene */
+  --color-navy-800: #04376e; /* blu del logo: titoli, link, controlli attivi (11,4:1 su bianco) */
+  --color-navy-600: #2c5f9e; /* bordi e linee su fondo blu */
+  --color-navy-300: #9db6d8; /* testo secondario su blu (7,3:1 su navy-900) */
+  --color-navy-100: #e1e9f4; /* fondo tenue */
+
+  /* Cremisi del logo ("QUOT") */
+  --color-crimson-700: #86122d; /* cremisi del logo: CTA, evidenze (9,6:1 su bianco) */
+  --color-crimson-800: #6c0e24; /* hover CTA */
+  --color-crimson-300: #f0a3b4; /* cremisi leggibile su blu (7,2:1 su navy-950) */
+  --color-crimson-100: #f8e4e9; /* fondo tenue */
+
+  /* Grafite e argento */
+  --color-ink: #14171d; /* testo principale (18:1 su argento) */
+  --color-graphite: #2a2f38;
+  --color-steel: #545c69; /* testo secondario (6,0:1 su argento, 6,9:1 su bianco) */
+  --color-line: #d3d8e0; /* bordi su chiaro */
+  --color-silver: #eef0f3; /* fondo pagina: l'alluminio del logo */
+  --color-silver-200: #e2e6ec; /* fasce alternate */
+  --color-white: #ffffff;
+
+  /* Stati */
+  --color-green-700: #17694a;
+  --color-green-100: #ddf2e8;
+  --color-green-300: #8fd9b6; /* esito positivo su blu */
+  --color-red-700: #b42318;
+  --color-red-100: #fde4e1;
+
+  /* Tipografia — Archivo variabile: largo (wdth 125) per i titoli, come le lettere del logo */
+  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --text-display: clamp(2.375rem, 1.2rem + 3.7vw, 4.375rem);
+  --text-display--line-height: 1.02;
+  --text-h2: clamp(2rem, 1.45rem + 2.2vw, 3.25rem);
+  --text-h2--line-height: 1.06;
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 1.3;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.45;
+
+  --spacing: 0.25rem;
+  --container-content: 78rem;
+
+  --radius-card: 0.875rem; /* 14 */
+  --radius-ctl: 0.5rem; /* bottoni e campi: squadrati come le lettere del logo */
+  --radius-pill: 999px;
+
+  /* Una sola ombra, con offset e blur, per il tabellone e il form */
+  --shadow-lift: 0 24px 48px -24px rgb(3 26 51 / 0.45), 0 4px 12px -6px rgb(3 26 51 / 0.2);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-micro: 160ms;
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: initial;
+}

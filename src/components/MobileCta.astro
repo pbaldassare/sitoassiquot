@@ -1,0 +1,32 @@
+---
+import site from '@/content/site.it.json';
+import Icon from '@/components/Icon.astro';
+const cta = site.nav.cta;
+---
+
+<!-- CTA fissa in basso su mobile: compare dopo l'hero, sparisce su form, footer e con il banner cookie aperto -->
+<div class="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-silver/95 px-4 py-3 backdrop-blur sm:hidden" data-mobile-cta hidden>
+  <a href={cta.href} class="btn btn-primary w-full">
+    {cta.label}
+    <Icon name="arrow-right" class="icon h-5 w-5" />
+  </a>
+</div>
+
+<script>
+  const bar = document.querySelector<HTMLElement>('[data-mobile-cta]');
+  const covers = [document.getElementById('hero'), document.getElementById('contatti'), document.querySelector('footer')].filter(
+    (el): el is HTMLElement => el !== null
+  );
+  const cookie = document.querySelector<HTMLElement>('[data-cookie-banner]');
+  if (bar && covers.length) {
+    document.body.appendChild(bar);
+    const visible = new Set<Element>();
+    const update = () => (bar.hidden = visible.size > 0 || (cookie !== null && !cookie.hidden));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+      update();
+    });
+    covers.forEach((el) => io.observe(el));
+    if (cookie) new MutationObserver(update).observe(cookie, { attributes: true, attributeFilter: ['hidden'] });
+  }
+</script>

@@ -1,0 +1,139 @@
+---
+// Font self-hosted (Archivo variabile, assi peso e larghezza): niente richieste a Google (prestazioni e GDPR)
+import '@fontsource-variable/archivo/wdth.css';
+import fontWdth from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
+import '@/styles/global.css';
+import site from '@/content/site.it.json';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import CookieBanner from '@/components/CookieBanner.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Pagina "leggera" (privacy, grazie): nessun JSON-LD SoftwareApplication */
+  minimal?: boolean;
+  noindex?: boolean;
+}
+const { title = site.meta.title, description = site.meta.description, minimal = false, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/brand/og-image.png', Astro.site);
+const org = site.organization;
+const siteUrl = Astro.site?.toString() ?? '/';
+const orgId = `${siteUrl}#organization`;
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': orgId,
+    name: org.legalName,
+    brand: { '@type': 'Brand', name: site.meta.siteName },
+    url: siteUrl,
+    logo: new URL('/brand/logo-full.png', Astro.site).toString(),
+    email: org.email,
+    taxID: '03854460833',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Via Trieste 22',
+      postalCode: '98071',
+      addressLocality: "Capo d'Orlando",
+      addressRegion: 'ME',
+      addressCountry: 'IT',
+    },
+    areaServed: 'IT',
+  },
+  { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${siteUrl}#website`, name: site.meta.siteName, url: siteUrl, inLanguage: 'it', publisher: { '@id': orgId } },
+  ...(minimal
+    ? []
+    : [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          '@id': `${siteUrl}#software`,
+          name: site.meta.siteName,
+          alternateName: 'ASSIQUOT — preventivatore RC Auto multicompagnia per intermediari',
+          keywords: site.meta.keywords.join(', '),
+          abstract: site.about.definition,
+          countriesSupported: 'IT',
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          description: site.meta.description,
+          url: siteUrl,
+          image: ogImage.toString(),
+          inLanguage: 'it',
+          audience: { '@type': 'BusinessAudience', audienceType: 'Agenti, broker e collaboratori assicurativi (RUI sezioni A, B, E)' },
+          featureList: site.features.blocks.map((b) => b.title).join(', '),
+          offers: { '@type': 'Offer', availability: 'https://schema.org/InStock', description: 'Demo su richiesta' },
+          provider: { '@id': orgId },
+        },
+      ]),
+];
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Riassunto per modelli generativi" />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta name="theme-color" content="#EEF0F3" />
+    <meta name="color-scheme" content="light" />
+
+    <link rel="icon" href="/brand/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/brand/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" sizes="180x180" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.meta.siteName} />
+    <meta property="og:locale" content={site.meta.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${site.meta.siteName} — ${site.meta.claim}`} />
+    <meta name="twitter:card" content={site.meta.twitterCard} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preload" href={fontWdth} as="font" type="font/woff2" crossorigin />
+
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+    {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+  </head>
+  <body class="flex min-h-dvh flex-col">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-ctl focus:bg-navy-800 focus:px-4 focus:py-2 focus:text-white">{site.nav.skipLink}</a>
+    <Header minimal={minimal} />
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <CookieBanner />
+
+    <script>
+      // Scroll-spy: evidenzia la voce di menu della sezione visibile
+      const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav-link[href^="#"]'));
+      const targets = links.map((l) => document.querySelector<HTMLElement>(l.getAttribute('href')!)).filter(Boolean) as HTMLElement[];
+      if (targets.length && 'IntersectionObserver' in window) {
+        const spy = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) links.forEach((l) => l.setAttribute('aria-current', l.getAttribute('href') === '#' + e.target.id ? 'true' : 'false'));
+            }
+          },
+          { rootMargin: '-40% 0px -55% 0px' }
+        );
+        targets.forEach((t) => spy.observe(t));
+      }
+    </script>
+  </body>
+</html>

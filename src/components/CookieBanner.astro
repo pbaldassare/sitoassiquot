@@ -1,0 +1,115 @@
+---
+import site from '@/content/site.it.json';
+const c = site.cookies;
+---
+
+<!-- Banner cookie: non blocca la pagina. Accetta e Rifiuta hanno lo stesso peso (linee guida Garante, 2021). -->
+<section
+  class="cookie-banner fixed inset-x-3 bottom-3 z-[60] max-w-md rounded-card bg-white p-5 text-ink shadow-lift ring-1 ring-line sm:inset-x-auto sm:left-5 sm:bottom-5 sm:p-6"
+  aria-labelledby="cookie-title"
+  data-cookie-banner
+  data-open="false"
+  hidden
+>
+  <h2 id="cookie-title" class="wide text-lg font-bold text-navy-800">{c.title}</h2>
+  <p class="mt-2 text-[0.9375rem] text-steel">
+    {c.text}{' '}
+    <a href={c.policyHref} class="font-semibold text-navy-800 underline">{c.policyLabel}</a>.
+  </p>
+
+  <div class="mt-4 hidden space-y-3 border-t border-line pt-4" data-cookie-prefs>
+    {
+      c.categories.map((cat) => (
+        <label class="checkbox">
+          <input type="checkbox" name={`cookie-${cat.id}`} data-cookie-cat={cat.id} checked={cat.locked} disabled={cat.locked} />
+          <span>
+            <span class="block font-semibold">{cat.title}</span>
+            <span class="block text-small text-steel">{cat.text}</span>
+          </span>
+        </label>
+      ))
+    }
+  </div>
+
+  <div class="mt-5 grid grid-cols-2 gap-2">
+    <button type="button" class="btn btn-outline !min-h-11 !px-4 !py-2" data-cookie-reject>{c.reject}</button>
+    <button type="button" class="btn btn-outline !min-h-11 !px-4 !py-2" data-cookie-accept>{c.accept}</button>
+    <button type="button" class="col-span-2 inline-flex min-h-11 items-center justify-center rounded-ctl text-[0.9375rem] font-semibold text-navy-800 underline hover:text-crimson-700" data-cookie-customize>
+      {c.customize}
+    </button>
+    <button type="button" class="btn btn-primary col-span-2 hidden !min-h-11" data-cookie-save>{c.save}</button>
+  </div>
+</section>
+
+<script>
+  const KEY = 'aq-consent';
+  const MAX_AGE = 1000 * 60 * 60 * 24 * 182; // circa 6 mesi
+  type Consent = { v: 1; stats: boolean; ts: number };
+
+  const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
+  const read = (): Consent | null => {
+    try {
+      const c = JSON.parse(localStorage.getItem(KEY) ?? 'null') as Consent | null;
+      return c && Date.now() - c.ts < MAX_AGE ? c : null;
+    } catch {
+      return null;
+    }
+  };
+  const apply = (c: Consent) => {
+    (window as unknown as { aqConsent: Consent }).aqConsent = c;
+    // Punto unico per eventuali statistiche future: si caricano solo se c.stats è true
+    window.dispatchEvent(new CustomEvent('aq:consent', { detail: c }));
+  };
+
+  if (banner) {
+    const prefs = banner.querySelector<HTMLElement>('[data-cookie-prefs]')!;
+    const stats = banner.querySelector<HTMLInputElement>('[data-cookie-cat="stats"]')!;
+    const save = banner.querySelector<HTMLButtonElement>('[data-cookie-save]')!;
+    const customize = banner.querySelector<HTMLButtonElement>('[data-cookie-customize]')!;
+    let lastFocus: HTMLElement | null = null;
+
+    const open = (withPrefs = false) => {
+      lastFocus = document.activeElement as HTMLElement | null;
+      stats.checked = read()?.stats ?? false;
+      prefs.classList.toggle('hidden', !withPrefs);
+      save.classList.toggle('hidden', !withPrefs);
+      customize.style.display = withPrefs ? 'none' : '';
+      banner.hidden = false;
+      requestAnimationFrame(() => (banner.dataset.open = 'true'));
+      if (withPrefs) banner.querySelector<HTMLElement>('button')?.focus();
+    };
+    const close = () => {
+      banner.dataset.open = 'false';
+      window.setTimeout(() => (banner.hidden = true), 350);
+      lastFocus?.focus?.();
+    };
+    const store = (statsOn: boolean) => {
+      const c: Consent = { v: 1, stats: statsOn, ts: Date.now() };
+      try {
+        localStorage.setItem(KEY, JSON.stringify(c));
+      } catch {
+        /* archivio non disponibile: la scelta vale solo per questa visita */
+      }
+      apply(c);
+      close();
+    };
+
+    banner.querySelector('[data-cookie-accept]')!.addEventListener('click', () => store(true));
+    banner.querySelector('[data-cookie-reject]')!.addEventListener('click', () => store(false));
+    save.addEventListener('click', () => store(stats.checked));
+    customize.addEventListener('click', () => {
+      prefs.classList.remove('hidden');
+      save.classList.remove('hidden');
+      customize.style.display = 'none';
+      stats.focus();
+    });
+    banner.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && read()) close();
+    });
+    document.querySelectorAll('[data-cookie-open]').forEach((b) => b.addEventListener('click', () => open(true)));
+
+    const existing = read();
+    if (existing) apply(existing);
+    else open(false);
+  }
+</script>

@@ -1,0 +1,20 @@
+---
+/** Logo ASSIQUOT (raster con trasparenza, da scripts/build-brand.mjs). Solo su fondi chiari. */
+import meta from '../../public/brand/logo-meta.json';
+interface Props {
+  class?: string;
+  height?: number;
+  full?: boolean;
+}
+const { class: className = '', height = 32, full = false } = Astro.props;
+const ratio = meta.wordmark.width / meta.wordmark.height;
+const width = Math.round(height * ratio);
+---
+
+{
+  full ? (
+    <img src="/brand/logo-full.png" alt="" width={Math.round(height * 4.48)} height={height} class={className} decoding="async" loading="lazy" />
+  ) : (
+    <img src="/brand/logo.png" alt="" width={width} height={height} class={className} decoding="async" fetchpriority="high" />
+  )
+}

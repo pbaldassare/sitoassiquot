@@ -1,0 +1,36 @@
+---
+import site from '@/content/site.it.json';
+import Icon from '@/components/Icon.astro';
+const f = site.faq;
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: f.items.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } })),
+};
+---
+
+<section id="faq" class="section scroll-mt-16" aria-labelledby="faq-title">
+  <div class="container-content grid gap-10 lg:grid-cols-[1fr_1.7fr] lg:gap-16">
+    <div class="lg:sticky lg:top-28 lg:self-start">
+      <h2 id="faq-title" class="display h-section text-navy-800">{f.title}</h2>
+      <p class="mt-5 text-steel">
+        {f.more.text}{' '}
+        <a href={f.more.href} class="font-semibold text-navy-800 underline hover:text-crimson-700">{f.more.label}</a>
+      </p>
+    </div>
+    <div class="border-t-2 border-navy-800">
+      {
+        f.items.map((item) => (
+          <details class="border-b border-line" name="faq">
+            <summary class="flex min-h-16 cursor-pointer items-center justify-between gap-6 py-5 text-left text-lg font-bold text-navy-800 transition-colors hover:text-crimson-700">
+              <span>{item.q}</span>
+              <Icon name="plus" class="chevron h-6 w-6 shrink-0 text-crimson-700" strokeWidth={2.25} />
+            </summary>
+            <p class="max-w-[65ch] pb-6 text-steel">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+<script type="application/ld+json" set:html={JSON.stringify(faqLd)} />

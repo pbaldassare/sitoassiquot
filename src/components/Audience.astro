@@ -1,0 +1,33 @@
+---
+import site from '@/content/site.it.json';
+const a = site.audience;
+const [ab, e] = a.groups;
+---
+
+<section id="per-chi" class="section scroll-mt-16" aria-labelledby="audience-title">
+  <div class="container-content">
+    <div class="grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-end">
+      <h2 id="audience-title" class="display h-section text-navy-800">{a.title}</h2>
+      <p class="lead text-steel">{a.intro}</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 lg:grid-cols-2">
+      <article class="rounded-card bg-white p-7 sm:p-10" aria-labelledby="aud-ab">
+        <h3 id="aud-ab" class="display text-[2rem] leading-tight text-navy-800 sm:text-[2.5rem]">{ab.title}</h3>
+        <p class="mt-1 font-semibold text-crimson-700">{ab.tag}</p>
+        <p class="mt-5 text-steel">{ab.text}</p>
+        <ul class="up-list mt-7 space-y-3 border-t border-line pt-7 font-medium text-ink">
+          {ab.items.map((i) => <li>{i}</li>)}
+        </ul>
+      </article>
+      <article class="on-navy rounded-card bg-navy-800 p-7 text-white sm:p-10" aria-labelledby="aud-e">
+        <h3 id="aud-e" class="display text-[2rem] leading-tight sm:text-[2.5rem]">{e.title}</h3>
+        <p class="mt-1 font-semibold text-crimson-300">{e.tag}</p>
+        <p class="mt-5 text-navy-100">{e.text}</p>
+        <ul class="up-list mt-7 space-y-3 border-t border-white/15 pt-7 font-medium">
+          {e.items.map((i) => <li>{i}</li>)}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>

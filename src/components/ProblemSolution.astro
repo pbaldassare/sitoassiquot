@@ -1,0 +1,36 @@
+---
+import site from '@/content/site.it.json';
+const p = site.problem;
+const rows = p.before.items.map((b, i) => ({ before: b, after: p.after.items[i] }));
+---
+
+<section class="section bg-silver-200" aria-labelledby="problem-title">
+  <div class="container-content">
+    <h2 id="problem-title" class="display h-section max-w-3xl text-navy-800">{p.title}</h2>
+
+    <div class="mt-12 overflow-hidden rounded-card bg-white">
+      <div class="hidden grid-cols-2 border-b border-line text-small font-bold tracking-[0.06em] uppercase md:grid">
+        <p class="px-8 py-4 text-steel">{p.before.label}</p>
+        <p class="border-l border-line px-8 py-4 text-crimson-700">{p.after.label}</p>
+      </div>
+      <ol>
+        {
+          rows.map((r) => (
+            <li class="grid border-b border-line last:border-b-0 md:grid-cols-2">
+              <div class="px-6 py-6 sm:px-8">
+                <p class="text-small font-bold tracking-[0.06em] text-steel uppercase md:hidden">{p.before.label}</p>
+                <p class="font-semibold text-steel line-through decoration-crimson-700/50 decoration-2">{r.before.title}</p>
+                <p class="mt-1 text-steel">{r.before.text}</p>
+              </div>
+              <div class="border-t border-line bg-navy-100/50 px-6 py-6 sm:px-8 md:border-t-0 md:border-l">
+                <p class="text-small font-bold tracking-[0.06em] text-crimson-700 uppercase md:hidden">{p.after.label}</p>
+                <p class="wide text-lg font-bold text-navy-800">{r.after.title}</p>
+                <p class="mt-1 text-ink">{r.after.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

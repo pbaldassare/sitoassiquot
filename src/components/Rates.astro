@@ -1,0 +1,113 @@
+---
+import site from '@/content/site.it.json';
+import Icon from '@/components/Icon.astro';
+const r = site.rates;
+const rows = [...r.base.map((name) => ({ name, convention: false })), ...r.convention.map((name) => ({ name, convention: true }))];
+// [auto, moto, autocarri, scatola nera]: true/false, testo per un limite, null = da verificare
+const vehicles = r.vehicles as Record<string, (boolean | string | null)[]>;
+const cols = [r.columns.auto, r.columns.moto, r.columns.autocarri, r.columns.blackbox];
+const total = rows.length;
+---
+
+<section id="compagnie" class="section scroll-mt-16 bg-white" aria-labelledby="rates-title">
+  <div class="container-content">
+    <div class="grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-end">
+      <h2 id="rates-title" class="display h-section text-navy-800">{r.title}</h2>
+      <p class="lead text-steel">{r.intro}</p>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between" data-rates-controls>
+      <div class="flex flex-wrap gap-2" role="group" aria-label="Filtra le compagnie">
+        {
+          r.filters.map((f, i) => (
+            <button type="button" class="seg" aria-pressed={i === 0 ? 'true' : 'false'} data-filter={f.id}>
+              {f.label}
+            </button>
+          ))
+        }
+      </div>
+      <p class="num text-[0.9375rem] font-semibold text-steel" aria-live="polite" data-rates-count data-template={r.countLabel}>
+        {r.countLabel.replace('{n}', String(total))}
+      </p>
+    </div>
+
+    <div class="mt-6 overflow-x-auto rounded-card border border-line">
+      <table class="w-full min-w-[40rem] text-left text-[0.9375rem]">
+        <caption class="sr-only">{r.title}</caption>
+        <thead class="bg-navy-900 text-small text-white">
+          <tr>
+            <th scope="col" class="px-5 py-3.5 font-semibold sm:px-6">{r.columns.company}</th>
+            {cols.map((c) => <th scope="col" class="px-3 py-3.5 text-center font-semibold">{c}</th>)}
+            <th scope="col" class="px-5 py-3.5 font-semibold sm:px-6">{r.columns.type}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-line" data-rates-body>
+          {
+            rows.map((row) => {
+              const v = vehicles[row.name] ?? [null, null, null, null];
+              const keys = v.map((x, i) => (x ? String(i) : '')).filter(Boolean);
+              if (row.convention) keys.push('conv');
+              return (
+                <tr class="rate-row transition-colors hover:bg-silver" data-keys={keys.join(' ')}>
+                  <th scope="row" class="wide px-5 py-3.5 font-bold whitespace-nowrap text-navy-800 sm:px-6">{row.name}</th>
+                  {v.map((x) => (
+                    <td class="px-3 py-3.5 text-center">
+                      {x === true ? (
+                        <Icon name="check" class="inline-block h-5 w-5 text-navy-800" strokeWidth={2.75} label={r.legend.yes} />
+                      ) : typeof x === 'string' ? (
+                        <span class="text-small font-semibold whitespace-nowrap text-navy-800">{x}</span>
+                      ) : (
+                        <span class="text-steel">
+                          <span aria-hidden="true">{x === null ? '?' : '–'}</span>
+                          <span class="sr-only">{x === null ? r.legend.unknown : r.legend.no}</span>
+                        </span>
+                      )}
+                    </td>
+                  ))}
+                  <td class="px-5 py-3.5 sm:px-6">
+                    {row.convention ? (
+                      <span class="inline-flex rounded-sm bg-crimson-100 px-2 py-0.5 text-small font-semibold whitespace-nowrap text-crimson-700">{r.conventionLabel}</span>
+                    ) : (
+                      <span class="text-small whitespace-nowrap text-steel">{r.baseLabel}</span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+      <p class="hidden px-6 py-8 text-center text-steel" data-rates-empty>{r.empty}</p>
+    </div>
+
+    <div class="mt-6 grid gap-2 lg:grid-cols-[1fr_auto] lg:gap-10">
+      <p class="max-w-3xl text-ink">{r.note}</p>
+      <p class="text-small text-steel lg:max-w-sm">? = {r.legend.unknown}. {r.disclaimer}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const controls = document.querySelector<HTMLElement>('[data-rates-controls]');
+  if (controls) {
+    const buttons = Array.from(controls.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+    const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-rates-body] .rate-row'));
+    const count = document.querySelector<HTMLElement>('[data-rates-count]')!;
+    const empty = document.querySelector<HTMLElement>('[data-rates-empty]')!;
+    const tpl = count.dataset.template ?? '{n}';
+    buttons.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.filter!;
+        buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        let n = 0;
+        rows.forEach((row) => {
+          const show = id === 'all' || (row.dataset.keys ?? '').split(' ').includes(id);
+          row.hidden = !show;
+          if (show) n++;
+        });
+        count.textContent = tpl.replace('{n}', String(n));
+        empty.classList.toggle('hidden', n > 0);
+      })
+    );
+  }
+</script>

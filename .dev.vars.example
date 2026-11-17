@@ -1,0 +1,4 @@
+# Copia in `.dev.vars` per il test locale con `npm run pages:dev`.
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
+CONTACT_TO=info@assiquot.it
+CONTACT_FROM="ASSIQUOT <info@assiquot.it>"
