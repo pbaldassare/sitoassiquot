@@ -3,7 +3,7 @@
     "siteName": "ASSIQUOT",
     "title": "ASSIQUOT — Preventivatore RC Auto multicompagnia per agenti, broker e collaboratori",
     "description": "La piattaforma per intermediari assicurativi: preventivi RC Auto, Moto e Autocarri su 22 compagnie da una targa, emissione, incassi e provvigioni maturate. Con il marchio della tua agenzia.",
-    "claim": "Una targa. 22 compagnie. Le tue provvigioni.",
+    "claim": "Metti la targa, confronti 22 compagnie e sai già quanto ci guadagni.",
     "locale": "it_IT",
     "twitterCard": "summary_large_image",
     "keywords": [
@@ -17,25 +17,53 @@
   },
   "nav": {
     "items": [
-      { "label": "Per chi è", "href": "#per-chi" },
-      { "label": "Funzionalità", "href": "#funzionalita" },
-      { "label": "Compagnie", "href": "#compagnie" },
-      { "label": "Reti", "href": "#reti" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Per chi è",
+        "href": "#per-chi"
+      },
+      {
+        "label": "Funzionalità",
+        "href": "#funzionalita"
+      },
+      {
+        "label": "Compagnie",
+        "href": "#compagnie"
+      },
+      {
+        "label": "Reti",
+        "href": "#reti"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
-    "cta": { "label": "Prenota una demo", "href": "#contatti" },
+    "cta": {
+      "label": "Prenota una demo",
+      "href": "#contatti"
+    },
     "menuOpen": "Apri il menu",
     "menuClose": "Chiudi il menu",
     "skipLink": "Vai al contenuto"
   },
   "hero": {
-    "titleA": "Una targa.",
-    "titleB": "22 compagnie.",
-    "titleC": "Le tue provvigioni.",
-    "subtitle": "ASSIQUOT è la piattaforma degli intermediari assicurativi. Agenti, broker e collaboratori di sezione E preventivano RC Auto, Moto e Autocarri su più compagnie, emettono, incassano e vedono cosa hanno maturato. Un accesso, con il marchio della tua agenzia.",
-    "ctaPrimary": { "label": "Prenota una demo", "href": "#contatti" },
-    "ctaSecondary": { "label": "Guarda le compagnie", "href": "#compagnie" },
-    "facts": ["Dati del veicolo da ANIA", "Nessuna installazione", "Il tuo nome, logo e dominio"],
+    "titleA": "Metti la targa,",
+    "titleB": "confronti 22 compagnie",
+    "titleC": "e sai già quanto ci guadagni.",
+    "subtitle": "ASSIQUOT è la piattaforma che agenti, broker e collaboratori usano per fare i preventivi RC Auto, Moto e Autocarri su più compagnie insieme. Dallo stesso posto emetti la polizza, mandi al cliente il link per pagare e controlli le provvigioni. Il cliente vede il nome e il logo della tua agenzia, non il nostro.",
+    "ctaPrimary": {
+      "label": "Prenota una demo",
+      "href": "#contatti"
+    },
+    "ctaSecondary": {
+      "label": "Guarda le compagnie",
+      "href": "#compagnie"
+    },
+    "facts": [
+      "I dati del veicolo arrivano da ANIA",
+      "Non devi installare niente",
+      "Nome, logo e dominio restano i tuoi"
+    ],
     "board": {
       "title": "Nuovo preventivo",
       "plateLabel": "Targa",
@@ -47,12 +75,36 @@
       "colPremium": "Premio annuo",
       "colFee": "Tua quota",
       "rows": [
-        { "name": "Prima.it", "premium": 398.5, "fee": 39.85 },
-        { "name": "ConTe", "premium": 412.8, "fee": 41.28 },
-        { "name": "Genialpiù", "premium": 427.1, "fee": 42.71 },
-        { "name": "Groupama", "premium": 455.4, "fee": 50.09 },
-        { "name": "HDI", "premium": 468.9, "fee": 51.58 },
-        { "name": "Unipol", "premium": 489.2, "fee": 53.81 }
+        {
+          "name": "Prima.it",
+          "premium": 398.5,
+          "fee": 39.85
+        },
+        {
+          "name": "ConTe",
+          "premium": 412.8,
+          "fee": 41.28
+        },
+        {
+          "name": "Genialpiù",
+          "premium": 427.1,
+          "fee": 42.71
+        },
+        {
+          "name": "Groupama",
+          "premium": 455.4,
+          "fee": 50.09
+        },
+        {
+          "name": "HDI",
+          "premium": 468.9,
+          "fee": 51.58
+        },
+        {
+          "name": "Unipol",
+          "premium": 489.2,
+          "fee": 53.81
+        }
       ],
       "searching": "Interrogo le compagnie…",
       "ready": "6 quotazioni pronte",
@@ -62,95 +114,113 @@
     }
   },
   "audience": {
-    "title": "Scritta per chi intermedia.",
-    "intro": "Non per chi naviga portali. ASSIQUOT è fatta sul lavoro quotidiano di chi ha un mandato e di chi colloca per conto di un'agenzia o di un broker.",
+    "title": "Pensata per agenti, broker e i loro collaboratori.",
+    "intro": "L'abbiamo costruita partendo da come lavora davvero un'agenzia. Chi ha il mandato deve seguire la squadra e far tornare i conti; chi colloca per un'agenzia o un broker vuole quotare in fretta e sapere quanto ha maturato.",
     "groups": [
       {
         "id": "ab",
         "tag": "Sezioni A e B del RUI",
         "title": "Agenti e broker",
-        "text": "Hai le credenziali dei portali e una squadra da coordinare. Ti serve un posto solo dove quotare, emettere e tenere i conti di tutti.",
+        "text": "Hai le credenziali dei portali e magari qualche collaboratore da seguire. Con ASSIQUOT fai preventivi, emetti e tieni la contabilità di tutti nello stesso posto.",
         "items": [
-          "Un'istanza con nome, logo e dominio della tua agenzia",
-          "Collaboratori con ruoli e saldo provvigionale per utente",
-          "Foglio cassa ed estratto provvigionale con i tuoi dati fiscali",
-          "Convenzioni da mettere a disposizione della tua rete"
+          "La piattaforma porta il nome, il logo e il dominio della tua agenzia",
+          "Ogni collaboratore ha il suo utente, il suo ruolo e il suo saldo provvigionale",
+          "Foglio cassa ed estratto provvigionale escono già con i tuoi dati fiscali",
+          "Se hai una convenzione, puoi farla usare anche alla tua rete"
         ]
       },
       {
         "id": "e",
         "tag": "Sezione E del RUI",
         "title": "Collaboratori",
-        "text": "Lavori per un'agenzia o un broker. Quoti dal telefono o dal PC, mandi al cliente il link di pagamento e sai quanto hai maturato.",
+        "text": "Lavori per un'agenzia o per un broker. Fai il preventivo dal telefono o dal PC, mandi al cliente il link per pagare e quando vuoi controlli quanto hai maturato.",
         "items": [
-          "Preventivo dalla targa, con veicolo e contraente da ANIA",
-          "Confronto tra le compagnie che il tuo intermediario ha attivato",
-          "Link di pagamento al cliente: carta, PayPal o rate",
-          "Saldo attivo: vedi solo le tue provvigioni e quote maturate"
+          "Scrivi la targa e veicolo e contraente si compilano da ANIA",
+          "Confronti le compagnie che il tuo intermediario ha attivato",
+          "Il cliente paga con carta, PayPal o a rate dal link che gli mandi",
+          "Vedi le tue provvigioni e le quote maturate, e solo quelle"
         ]
       }
     ]
   },
   "problem": {
-    "title": "Meno portali. Più polizze.",
+    "title": "Basta saltare da un portale all'altro.",
     "before": {
       "label": "Oggi",
       "items": [
-        { "title": "Un portale per compagnia", "text": "Per un preventivo apri cinque siti, con cinque password." },
-        { "title": "Gli stessi dati, cinque volte", "text": "Targa, contraente, veicolo: ricopiati a mano portale dopo portale." },
-        { "title": "Provvigioni su Excel", "text": "Quote compagnia, consulenza e diritti in un foglio che nessuno aggiorna in tempo." }
+        {
+          "title": "Un portale per ogni compagnia",
+          "text": "Per un solo preventivo apri cinque siti e ti ricordi cinque password diverse."
+        },
+        {
+          "title": "Sempre gli stessi dati",
+          "text": "Ricopi a mano targa, contraente e veicolo su ogni portale, uno dopo l'altro."
+        },
+        {
+          "title": "Le provvigioni su Excel",
+          "text": "Quote, consulenze e diritti finiscono in un foglio che nessuno aggiorna mai in tempo."
+        }
       ]
     },
     "after": {
       "label": "Con ASSIQUOT",
       "items": [
-        { "title": "Un accesso", "text": "Scegli le compagnie da interrogare: le quotazioni arrivano in un'unica schermata." },
-        { "title": "La targa compila il resto", "text": "Da ANIA recuperi contraente e veicolo. Ogni preventivo alimenta la scheda cliente." },
-        { "title": "Saldo per utente", "text": "Ogni collaboratore vede le provvigioni e le quote maturate. Senza fogli di calcolo." }
+        {
+          "title": "Entri una volta sola",
+          "text": "Scegli quali compagnie interrogare e le offerte arrivano tutte nella stessa schermata."
+        },
+        {
+          "title": "La targa fa il resto",
+          "text": "Contraente e veicolo arrivano da ANIA, e ogni preventivo va ad arricchire la scheda del cliente."
+        },
+        {
+          "title": "Ognuno vede il suo saldo",
+          "text": "Ogni collaboratore sa quanto ha maturato, senza aspettare che qualcuno aggiorni il foglio."
+        }
       ]
     }
   },
   "features": {
-    "title": "Dal preventivo all'estratto provvigionale.",
-    "intro": "Quattro aree in una piattaforma. Ogni voce è qualcosa che ASSIQUOT fa oggi.",
+    "title": "Quello che fai ogni giorno, dal preventivo alle provvigioni.",
+    "intro": "Qui trovi l'elenco completo, diviso in quattro parti. Niente funzioni \"in arrivo\": è quello che la piattaforma fa adesso.",
     "blocks": [
       {
         "id": "preventivi",
         "title": "Preventivi",
-        "summary": "Dalla targa al confronto tra compagnie, con le garanzie che vendi davvero.",
+        "summary": "Parti dalla targa e confronti le compagnie, con le garanzie che vendi davvero.",
         "items": [
-          "Ricerca automatica su ANIA per auto, moto e autocarri: dalla targa a contraente, marca, modello e cilindrata, dove disponibili",
-          "Quotazioni su più compagnie in un'unica schermata, scegliendo quali interrogare",
+          "Ricerca su ANIA per auto, moto e autocarri: dalla targa recuperi contraente, marca, modello e cilindrata, quando ci sono",
+          "Quotazioni di più compagnie nella stessa schermata, e scegli tu quali interrogare",
           "Continuità assicurativa: Bersani, familiari con lo stesso proprietario, veicoli recuperati",
           "Guida esperta e guida libera",
-          "Scatola nera sulle compagnie che la prevedono, con sconto ottenuto e canone mostrati a parte",
+          "Scatola nera sulle compagnie che la prevedono, con lo sconto e il canone indicati a parte",
           "Garanzie accessorie dentro l'RCA (furto, incendio) e coperture CVT",
           "RC Auto, Moto, Autocarri e CVT standalone",
-          "Prodotti personalizzati con quotazione inserita a mano",
+          "Prodotti personalizzati, con il premio inserito a mano",
           "Caricamento documenti e stampa del mandato dal preventivo",
           "Libreria CGA: le condizioni di assicurazione allegate al preventivo",
           "Codici OTP dei portali delle compagnie confermati dentro la piattaforma",
-          "API con token per chiedere preventivi e leggere le scadenze dal tuo sito o gestionale"
+          "API con token, se vuoi chiedere preventivi o leggere le scadenze dal tuo sito o dal tuo gestionale"
         ]
       },
       {
         "id": "polizze",
         "title": "Polizze e incassi",
-        "summary": "Emetti, incassa e segui le scadenze senza uscire dalla piattaforma.",
+        "summary": "Emissione, incassi e scadenze, senza uscire dalla piattaforma.",
         "items": [
           "Sostituzione, sospensione, riattivazione, rinnovo e disdetta",
-          "Polizze in scadenza con riepilogo e preventivo di rinnovo in un clic",
+          "Elenco delle polizze in scadenza, con il preventivo di rinnovo a un clic",
           "Link di pagamento per il cliente: carta con Stripe o Nexi, PayPal, oppure 3 o 4 rate con Maryan Pay",
-          "Bonifico con intestatario e IBAN della tua agenzia",
+          "Bonifico: al cliente compaiono intestatario e IBAN della tua agenzia",
           "Quietanze intermedie e rate successive da pagare",
-          "Acquisto diretto dal preventivo sulle compagnie che abiliti",
+          "Sulle compagnie che abiliti, il cliente può comprare direttamente dal preventivo",
           "Fattura stampata sulla polizza"
         ]
       },
       {
         "id": "provvigioni",
         "title": "Provvigioni",
-        "summary": "Chi ha venduto cosa, e quanto ha maturato. Per polizza e per utente.",
+        "summary": "Chi ha venduto cosa e quanto ha maturato, polizza per polizza.",
         "items": [
           "Provvigione compagnia, quota consulenza e diritti di emissione gestiti per ogni polizza",
           "Saldo attivo per utente: ogni collaboratore vede provvigioni e quote maturate",
@@ -164,10 +234,10 @@
       {
         "id": "marchio",
         "title": "Il tuo marchio",
-        "summary": "I clienti vedono la tua agenzia, non la piattaforma.",
+        "summary": "Il cliente vede la tua agenzia, non noi.",
         "items": [
-          "Nome, logo e dominio della tua agenzia; le risposte dei clienti alle email arrivano a te",
-          "Anagrafica clienti che si compila da sola con i dati dei preventivi",
+          "Nome, logo e dominio della tua agenzia, e le risposte dei clienti alle email arrivano a te",
+          "Anagrafica clienti che si riempie da sola con i dati dei preventivi",
           "Notifiche email: nuovo preventivo, richiesta di emissione, promemoria di scadenza al cliente",
           "Chat interna tra utenti e chat di assistenza",
           "Gestione fornitori",
@@ -180,15 +250,33 @@
     ]
   },
   "rates": {
-    "title": "Il listino delle compagnie.",
-    "intro": "22 tariffe interrogabili: 19 base, disponibili per ogni agenzia, e 3 in convenzione, che arrivano tramite accordi dedicati. Filtra per quello che devi quotare.",
+    "title": "Le compagnie che puoi interrogare.",
+    "intro": "Sono 22 in tutto. 19 sono tariffe base e le può attivare qualsiasi agenzia, le altre 3 arrivano tramite convenzioni. Con i filtri vedi subito chi quota quello che ti serve.",
     "filters": [
-      { "id": "all", "label": "Tutte" },
-      { "id": "0", "label": "Auto" },
-      { "id": "1", "label": "Moto" },
-      { "id": "2", "label": "Autocarri" },
-      { "id": "3", "label": "Scatola nera" },
-      { "id": "conv", "label": "In convenzione" }
+      {
+        "id": "all",
+        "label": "Tutte"
+      },
+      {
+        "id": "0",
+        "label": "Auto"
+      },
+      {
+        "id": "1",
+        "label": "Moto"
+      },
+      {
+        "id": "2",
+        "label": "Autocarri"
+      },
+      {
+        "id": "3",
+        "label": "Scatola nera"
+      },
+      {
+        "id": "conv",
+        "label": "In convenzione"
+      }
     ],
     "countLabel": "{n} compagnie",
     "baseLabel": "Tariffa base",
@@ -214,7 +302,11 @@
       "Wakam",
       "Zurich"
     ],
-    "convention": ["Allianz", "Generali Cargo", "VHV Assicurazioni"],
+    "convention": [
+      "Allianz",
+      "Generali Cargo",
+      "VHV Assicurazioni"
+    ],
     "columns": {
       "company": "Compagnia",
       "auto": "Auto",
@@ -224,134 +316,323 @@
       "type": "Accesso"
     },
     "vehicles": {
-      "Adriatic": [true, false, "≤ 35 q.li", true],
-      "AXA": [true, true, true, true],
-      "Bene Assicurazioni": [true, true, true, false],
-      "ConTe": [true, true, false, false],
-      "Euroherc": [true, false, "≤ 35 q.li", false],
-      "Genialpiù": [true, true, true, false],
-      "Groupama": [true, true, true, false],
-      "HDI": [true, true, true, true],
-      "Italiana Assicurazioni": [true, true, true, true],
-      "ITAS": [true, true, true, false],
-      "Linear Next": [true, true, "solo VAN", true],
-      "Motoplatinum": [false, true, false, true],
-      "Nobis": [true, true, true, false],
-      "Prima.it": [true, true, "≤ 35 q.li", false],
-      "Sara": [true, true, false, true],
-      "Unipol": [true, true, true, true],
-      "Verti Professional": [true, false, true, false],
-      "Wakam": [true, true, false, false],
-      "Zurich": [true, true, false, false],
-      "Allianz": [true, true, true, true],
-      "Generali Cargo": [true, null, true, false],
-      "VHV Assicurazioni": [true, true, true, false]
+      "Adriatic": [
+        true,
+        false,
+        "≤ 35 q.li",
+        true
+      ],
+      "AXA": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "Bene Assicurazioni": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "ConTe": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "Euroherc": [
+        true,
+        false,
+        "≤ 35 q.li",
+        false
+      ],
+      "Genialpiù": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "Groupama": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "HDI": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "Italiana Assicurazioni": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "ITAS": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "Linear Next": [
+        true,
+        true,
+        "solo VAN",
+        true
+      ],
+      "Motoplatinum": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "Nobis": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "Prima.it": [
+        true,
+        true,
+        "≤ 35 q.li",
+        false
+      ],
+      "Sara": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "Unipol": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "Verti Professional": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "Wakam": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "Zurich": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "Allianz": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "Generali Cargo": [
+        true,
+        null,
+        true,
+        false
+      ],
+      "VHV Assicurazioni": [
+        true,
+        true,
+        true,
+        false
+      ]
     },
-    "note": "Per interrogare una tariffa serve l'accesso (utente e password) al portale della compagnia: senza credenziali la tariffa non produce offerte.",
+    "note": "Per interrogare una compagnia ti servono utente e password del suo portale. Senza credenziali la tariffa non restituisce offerte.",
     "disclaimer": "I nomi delle compagnie sono riportati a solo scopo identificativo e appartengono ai rispettivi titolari.",
     "empty": "Nessuna compagnia con questo filtro.",
-    "legend": { "yes": "sì", "no": "no", "unknown": "da verificare" }
+    "legend": {
+      "yes": "sì",
+      "no": "no",
+      "unknown": "da verificare"
+    }
   },
   "collab": {
-    "title": "Hai una rete? Dalle uno strumento comune.",
-    "intro": "ASSIQUOT è costruita su tre livelli. È questa struttura che permette a intermediari diversi di lavorare insieme senza mescolare i conti.",
+    "title": "Hai una rete o una convenzione? Si può lavorare insieme.",
+    "intro": "La piattaforma è organizzata su tre livelli. È questo che permette a intermediari diversi di condividere tariffe e convenzioni, tenendo separati i conti di ognuno.",
     "levels": [
-      { "n": "1", "name": "Tariffa", "text": "Il prodotto della compagnia, così come lo espone il suo portale." },
-      { "n": "2", "name": "Convenzione", "text": "Quella tariffa con le condizioni di chi la mette a disposizione." },
-      { "n": "3", "name": "Istanza", "text": "La piattaforma della singola agenzia, con le convenzioni abilitate e i moduli accesi." }
+      {
+        "n": "1",
+        "name": "Tariffa",
+        "text": "Il prodotto della compagnia, così come lo trovi sul suo portale."
+      },
+      {
+        "n": "2",
+        "name": "Convenzione",
+        "text": "La stessa tariffa, con le condizioni di chi la mette a disposizione."
+      },
+      {
+        "n": "3",
+        "name": "Istanza",
+        "text": "La piattaforma della singola agenzia, con le sue convenzioni e i moduli che ha scelto di attivare."
+      }
     ],
     "cases": [
       {
         "title": "Hai una convenzione?",
-        "text": "Mettila a disposizione di altre agenzie, con le tue condizioni. Chi la usa la trova tra le proprie tariffe, tu la governi."
+        "text": "Puoi farla usare ad altre agenzie, alle tue condizioni. Loro la trovano insieme alle altre tariffe, tu decidi come funziona."
       },
       {
         "title": "Coordini una rete di intermediari?",
-        "text": "Porta ASSIQUOT ai tuoi collaboratori, ognuno con la propria istanza, nome e dominio. Tu vedi le provvigioni di rete."
+        "text": "Ogni collaboratore può avere la sua istanza, con il suo nome e il suo dominio, e tu vedi le provvigioni di tutta la rete."
       }
     ],
-    "cta": { "label": "Proponi una collaborazione", "href": "#contatti" },
+    "cta": {
+      "label": "Proponi una collaborazione",
+      "href": "#contatti"
+    },
     "diagram": {
       "title": "Schema a tre livelli: la tariffa diventa convenzione, la convenzione si accende su una o più istanze",
       "tariffa": "Tariffa",
       "convenzione": "Convenzione",
-      "istanze": ["Agenzia A", "Agenzia B", "Agenzia C"],
+      "istanze": [
+        "Agenzia A",
+        "Agenzia B",
+        "Agenzia C"
+      ],
       "condizioni": "+ condizioni",
-      "caption": "Una piattaforma. Cambiano convenzioni e moduli accesi."
+      "caption": "Una piattaforma sola, con convenzioni e moduli diversi per ogni agenzia."
     }
   },
   "onboarding": {
     "title": "Come si parte",
-    "intro": "Nessuna installazione. Ci servono i dati della tua agenzia, in questo ordine.",
+    "intro": "Non c'è niente da installare. Ci mandi alcuni dati della tua agenzia e la piattaforma la prepariamo noi.",
     "steps": [
-      { "title": "Identità", "text": "Nome dell'agenzia, logo PNG ad alta risoluzione, dominio e inoltro DNS." },
-      { "title": "Dati fiscali", "text": "Ragione sociale, P.IVA, sede, codice SDI o PEC: compaiono sull'estratto provvigionale e nell'export contabile." },
-      { "title": "Contatti", "text": "Email e telefono dell'agenzia, che diventano l'indirizzo di risposta verso i tuoi clienti." },
-      { "title": "Incassi", "text": "Intestatario e IBAN per il bonifico; chiavi Stripe o account Nexi per la carta; PayPal e Maryan Pay se vuoi anche quei metodi." },
-      { "title": "Documenti", "text": "Modello Word del mandato, con logo e numero RUI, e modello della fattura." },
-      { "title": "Accessi compagnie", "text": "Credenziali ai portali delle tariffe che vuoi attivare." }
+      {
+        "title": "Identità",
+        "text": "Il nome dell'agenzia, il logo in PNG ad alta risoluzione, il dominio e l'inoltro DNS."
+      },
+      {
+        "title": "Dati fiscali",
+        "text": "Ragione sociale, P.IVA, sede, codice SDI o PEC. Servono per l'estratto provvigionale e per l'export contabile."
+      },
+      {
+        "title": "Contatti",
+        "text": "Email e telefono dell'agenzia: sono gli indirizzi a cui ti risponderanno i clienti."
+      },
+      {
+        "title": "Incassi",
+        "text": "Intestatario e IBAN per i bonifici. Per la carta, le chiavi Stripe o un account Nexi; PayPal e Maryan Pay se vuoi offrire anche quelli."
+      },
+      {
+        "title": "Documenti",
+        "text": "Il modello Word del mandato, con logo e numero RUI, e quello della fattura."
+      },
+      {
+        "title": "Accessi compagnie",
+        "text": "Le credenziali dei portali delle compagnie che vuoi attivare."
+      }
     ],
-    "closing": "Raccolti questi dati, la tua istanza è pronta in pochi giorni."
+    "closing": "Quando abbiamo tutto, di solito bastano pochi giorni."
   },
   "faq": {
     "title": "Domande frequenti",
     "items": [
       {
         "q": "Cos'è ASSIQUOT?",
-        "a": "Una piattaforma web per intermediari assicurativi: preventivi RC Auto, Moto e Autocarri su più compagnie, emissione e gestione delle polizze, incassi, provvigioni, anagrafiche e comunicazione con il cliente. Un accesso al posto di un portale per compagnia."
+        "a": "È una piattaforma web per chi fa intermediazione assicurativa. Ci fai i preventivi RC Auto, Moto e Autocarri su più compagnie, emetti e gestisci le polizze, incassi e tieni sotto controllo provvigioni, anagrafiche e comunicazioni con i clienti. In pratica, al posto di un portale per ogni compagnia hai un accesso solo."
       },
       {
-        "q": "Sono un collaboratore di sezione E: posso usare ASSIQUOT?",
-        "a": "Sì, attraverso l'agenzia o il broker per cui lavori: ti crea un utente nella sua istanza, con il tuo ruolo e il tuo saldo provvigionale. Se il tuo intermediario non usa ancora ASSIQUOT, scrivicelo nel modulo e lo contattiamo noi."
+        "q": "Sono un collaboratore di sezione E: posso usarla?",
+        "a": "Sì, passando dall'agenzia o dal broker per cui lavori. Ti crea un utente nella sua piattaforma, con il tuo ruolo e il tuo saldo provvigionale. Se il tuo intermediario non usa ancora ASSIQUOT, scrivicelo nel modulo e lo contattiamo noi."
       },
       {
-        "q": "Serve un altro gestionale?",
-        "a": "No. Preventivi, emissione, polizze, incassi, provvigioni, anagrafiche e comunicazione con il cliente sono già in piattaforma. Il foglio cassa e l'export contabile coprono la parte amministrativa."
+        "q": "Mi serve anche un altro gestionale?",
+        "a": "No. Preventivi, emissione, polizze, incassi, provvigioni, anagrafiche e comunicazioni con i clienti sono già dentro. Per la parte amministrativa ci sono il foglio cassa e l'export contabile."
       },
       {
-        "q": "Quali compagnie si possono interrogare?",
-        "a": "19 tariffe base: Adriatic, AXA, Bene Assicurazioni, ConTe, Euroherc, Genialpiù, Groupama, HDI, Italiana Assicurazioni, ITAS, Linear Next, Motoplatinum, Nobis, Prima.it, Sara, Unipol, Verti Professional, Wakam e Zurich. Più 3 in convenzione: Allianz, Generali Cargo e VHV Assicurazioni."
+        "q": "Quali compagnie posso interrogare?",
+        "a": "Ci sono 19 tariffe base: Adriatic, AXA, Bene Assicurazioni, ConTe, Euroherc, Genialpiù, Groupama, HDI, Italiana Assicurazioni, ITAS, Linear Next, Motoplatinum, Nobis, Prima.it, Sara, Unipol, Verti Professional, Wakam e Zurich. In più ce ne sono 3 in convenzione: Allianz, Generali Cargo e VHV Assicurazioni."
       },
       {
-        "q": "Cosa serve per interrogare una tariffa?",
-        "a": "L'accesso (utente e password) al portale della compagnia: senza credenziali la tariffa non produce offerte. Attivi solo le tariffe per cui hai le credenziali e a ogni preventivo scegli quali compagnie interrogare."
+        "q": "Cosa mi serve per interrogare una compagnia?",
+        "a": "Utente e password del suo portale, perché senza credenziali la tariffa non restituisce offerte. Attivi solo le compagnie per cui hai l'accesso e, a ogni preventivo, scegli quali interrogare."
       },
       {
-        "q": "Si può quotare con la scatola nera?",
-        "a": "Sì, su Adriatic, AXA, HDI, Italiana Assicurazioni, Linear Next, Motoplatinum, Sara, Unipol e Allianz. La piattaforma richiede il dispositivo sul portale della compagnia e mostra lo sconto ottenuto e il canone a parte. Sulle altre si quota senza scatola nera, con una nota nell'offerta."
+        "q": "Posso quotare con la scatola nera?",
+        "a": "Sì, su Adriatic, AXA, HDI, Italiana Assicurazioni, Linear Next, Motoplatinum, Sara, Unipol e Allianz. La piattaforma richiede il dispositivo sul portale della compagnia e ti mostra a parte lo sconto ottenuto e il canone. Sulle altre compagnie quoti senza scatola nera, e nell'offerta c'è una nota che lo segnala."
       },
       {
-        "q": "I miei clienti vedono i miei dati o quelli di ASSIQUOT?",
-        "a": "I tuoi. Ogni agenzia ha la sua istanza con nome, logo e dominio propri (basta un inoltro DNS), intestatario e IBAN per il bonifico. Le email ai clienti partono dalla piattaforma, ma le risposte arrivano alla tua agenzia."
+        "q": "I miei clienti vedono il mio nome o il vostro?",
+        "a": "Il tuo. Ogni agenzia ha la sua piattaforma, con nome, logo e dominio propri (basta un inoltro DNS) e il suo IBAN per i bonifici. Le email ai clienti partono dalla piattaforma, ma quando rispondono la risposta arriva a te."
       },
       {
-        "q": "Come vengono gestite le provvigioni dei collaboratori?",
-        "a": "Per ogni polizza registri provvigione compagnia, quota consulenza e diritti di emissione. Ogni collaboratore ha un saldo attivo e vede solo le proprie provvigioni e quote maturate."
+        "q": "Come funzionano le provvigioni dei collaboratori?",
+        "a": "Per ogni polizza registri la provvigione della compagnia, la quota di consulenza e i diritti di emissione. Ogni collaboratore ha il suo saldo e vede soltanto le sue provvigioni e le quote maturate."
       },
       {
         "q": "Quanto ci vuole per partire?",
-        "a": "Pochi giorni. Dipende da quanto in fretta ci mandi i sei blocchi di dati di \"Come si parte\": identità, dati fiscali, contatti, incassi, documenti e accessi alle compagnie."
+        "a": "Di solito pochi giorni. Dipende soprattutto da quanto in fretta ci mandi i dati che trovi in \"Come si parte\": identità, dati fiscali, contatti, incassi, documenti e accessi alle compagnie."
       }
     ],
-    "more": { "text": "Non trovi la risposta?", "label": "Scrivici", "href": "#contatti" }
+    "more": {
+      "text": "Hai un'altra domanda?",
+      "label": "Scrivici",
+      "href": "#contatti"
+    }
   },
   "contact": {
-    "title": "Vediamola su un preventivo vero.",
-    "intro": "Ti mostriamo ASSIQUOT con una targa reale, sulle compagnie che usi. Lasciaci i tuoi riferimenti e ti richiamiamo.",
+    "title": "Te la facciamo vedere con un preventivo vero.",
+    "intro": "Prendiamo una targa reale e la quotiamo sulle compagnie che usi già, così capisci subito se fa per te. Lasciaci un recapito e ti richiamiamo noi.",
     "roleLegend": "Sei",
     "roles": [
-      { "value": "agente", "label": "Agente" },
-      { "value": "broker", "label": "Broker" },
-      { "value": "collaboratore", "label": "Collaboratore sez. E" },
-      { "value": "rete", "label": "Rete" }
+      {
+        "value": "agente",
+        "label": "Agente"
+      },
+      {
+        "value": "broker",
+        "label": "Broker"
+      },
+      {
+        "value": "collaboratore",
+        "label": "Collaboratore sez. E"
+      },
+      {
+        "value": "rete",
+        "label": "Rete"
+      }
     ],
     "fields": {
-      "name": { "label": "Nome e cognome", "placeholder": "Mario Rossi", "error": "Inserisci il tuo nome." },
-      "agency": { "label": "Agenzia o intermediario", "placeholder": "Nome dell'agenzia o del broker", "error": "Inserisci il nome dell'agenzia o dell'intermediario." },
-      "email": { "label": "Email", "placeholder": "nome@agenzia.it", "error": "Inserisci un indirizzo email valido, per esempio nome@agenzia.it." },
-      "phone": { "label": "Telefono", "placeholder": "+39 ...", "error": "Inserisci un numero di telefono valido." },
-      "message": { "label": "Messaggio", "placeholder": "Come lavori oggi, quali compagnie usi, quanti collaboratori hai.", "error": "Scrivi un messaggio di almeno 8 caratteri." },
-      "collab": { "label": "Mi interessa una collaborazione (ho una convenzione o una rete di intermediari)" },
+      "name": {
+        "label": "Nome e cognome",
+        "placeholder": "Mario Rossi",
+        "error": "Inserisci il tuo nome."
+      },
+      "agency": {
+        "label": "Agenzia o intermediario",
+        "placeholder": "Nome dell'agenzia o del broker",
+        "error": "Inserisci il nome dell'agenzia o dell'intermediario."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "nome@agenzia.it",
+        "error": "Inserisci un indirizzo email valido, per esempio nome@agenzia.it."
+      },
+      "phone": {
+        "label": "Telefono",
+        "placeholder": "+39 ...",
+        "error": "Inserisci un numero di telefono valido."
+      },
+      "message": {
+        "label": "Messaggio",
+        "placeholder": "Raccontaci come lavori oggi: che compagnie usi, se hai collaboratori, cosa vorresti vedere.",
+        "error": "Scrivi un messaggio di almeno 8 caratteri."
+      },
+      "collab": {
+        "label": "Mi interessa una collaborazione (ho una convenzione o una rete di intermediari)"
+      },
       "privacy": {
         "label": "Ho letto l'informativa privacy e acconsento al trattamento dei dati per essere ricontattato.",
         "linkLabel": "informativa privacy",
@@ -361,37 +642,77 @@
     },
     "submit": "Invia la richiesta",
     "submitting": "Invio in corso…",
-    "success": { "title": "Richiesta inviata.", "text": "Ti rispondiamo entro un giorno lavorativo." },
-    "error": { "title": "La richiesta non è partita.", "text": "Riprova tra qualche minuto oppure scrivici direttamente a" },
+    "success": {
+      "title": "Richiesta inviata.",
+      "text": "Ti rispondiamo entro un giorno lavorativo."
+    },
+    "error": {
+      "title": "La richiesta non è partita.",
+      "text": "Riprova tra qualche minuto oppure scrivici direttamente a"
+    },
     "email": "info@assiquot.it",
-    "reassurance": ["Nessun impegno", "Risposta entro un giorno lavorativo", "Nessun tracker di terze parti"]
+    "reassurance": [
+      "Non ti impegni a niente",
+      "Ti rispondiamo entro un giorno lavorativo",
+      "Sul sito non ci sono tracker"
+    ]
   },
   "footer": {
-    "tagline": "Piattaforma integrata per quotazioni e assicurazioni, per agenti, broker e collaboratori.",
+    "tagline": "La piattaforma per quotazioni e assicurazioni di agenti, broker e collaboratori.",
     "columns": [
       {
         "title": "Sito",
         "links": [
-          { "label": "Per chi è", "href": "#per-chi" },
-          { "label": "Funzionalità", "href": "#funzionalita" },
-          { "label": "Compagnie", "href": "#compagnie" },
-          { "label": "Reti", "href": "#reti" },
-          { "label": "FAQ", "href": "#faq" }
+          {
+            "label": "Per chi è",
+            "href": "#per-chi"
+          },
+          {
+            "label": "Funzionalità",
+            "href": "#funzionalita"
+          },
+          {
+            "label": "Compagnie",
+            "href": "#compagnie"
+          },
+          {
+            "label": "Reti",
+            "href": "#reti"
+          },
+          {
+            "label": "FAQ",
+            "href": "#faq"
+          }
         ]
       },
       {
         "title": "Contatti",
         "links": [
-          { "label": "Prenota una demo", "href": "#contatti" },
-          { "label": "Proponi una collaborazione", "href": "#contatti" },
-          { "label": "info@assiquot.it", "href": "mailto:info@assiquot.it" }
+          {
+            "label": "Prenota una demo",
+            "href": "#contatti"
+          },
+          {
+            "label": "Proponi una collaborazione",
+            "href": "#contatti"
+          },
+          {
+            "label": "info@assiquot.it",
+            "href": "mailto:info@assiquot.it"
+          }
         ]
       },
       {
         "title": "Legale",
         "links": [
-          { "label": "Privacy policy", "href": "/privacy" },
-          { "label": "Cookie policy", "href": "/privacy#cookie" }
+          {
+            "label": "Privacy policy",
+            "href": "/privacy"
+          },
+          {
+            "label": "Cookie policy",
+            "href": "/privacy#cookie"
+          }
         ]
       }
     ],
@@ -410,7 +731,7 @@
   },
   "cookies": {
     "title": "Cookie su questo sito",
-    "text": "Usiamo solo strumenti tecnici, necessari a far funzionare il sito. Le statistiche di visita, anonime e senza profilazione, partono solo se le accetti.",
+    "text": "Il sito usa solo quello che serve per funzionare. Se vuoi, puoi lasciarci contare le visite in forma anonima, senza profilazione.",
     "policyLabel": "Cookie policy",
     "policyHref": "/privacy#cookie",
     "accept": "Accetta",
@@ -419,15 +740,31 @@
     "save": "Salva le scelte",
     "close": "Chiudi",
     "categories": [
-      { "id": "necessary", "title": "Tecnici", "text": "Ricordano le tue scelte sui cookie. Sempre attivi.", "locked": true },
-      { "id": "stats", "title": "Statistiche", "text": "Conteggio anonimo delle visite, senza profilazione né tracciamento tra siti.", "locked": false }
+      {
+        "id": "necessary",
+        "title": "Tecnici",
+        "text": "Servono a ricordare le tue scelte sui cookie. Sono sempre attivi.",
+        "locked": true
+      },
+      {
+        "id": "stats",
+        "title": "Statistiche",
+        "text": "Ci dicono quante persone visitano il sito, in forma anonima e senza seguirti su altri siti.",
+        "locked": false
+      }
     ]
   },
   "thanks": {
     "title": "Grazie, richiesta ricevuta.",
-    "text": "Ti rispondiamo entro un giorno lavorativo. Nel frattempo puoi guardare il listino delle compagnie.",
-    "ctaHome": { "label": "Torna al sito", "href": "/" },
-    "ctaRates": { "label": "Vedi le compagnie", "href": "/#compagnie" },
+    "text": "Ti rispondiamo entro un giorno lavorativo. Nel frattempo, se vuoi, dai un'occhiata alle compagnie disponibili.",
+    "ctaHome": {
+      "label": "Torna al sito",
+      "href": "/"
+    },
+    "ctaRates": {
+      "label": "Vedi le compagnie",
+      "href": "/#compagnie"
+    },
     "metaTitle": "Grazie — ASSIQUOT"
   },
   "privacy": {
@@ -495,8 +832,20 @@
     ],
     "cookieTable": {
       "caption": "Strumenti usati dal sito",
-      "head": ["Nome", "Tipo", "Finalità", "Durata"],
-      "rows": [["aq-consent", "Tecnico, archivio locale", "Ricordare le scelte sui cookie", "6 mesi"]]
+      "head": [
+        "Nome",
+        "Tipo",
+        "Finalità",
+        "Durata"
+      ],
+      "rows": [
+        [
+          "aq-consent",
+          "Tecnico, archivio locale",
+          "Ricordare le scelte sui cookie",
+          "6 mesi"
+        ]
+      ]
     }
   },
   "organization": {
@@ -507,12 +856,30 @@
   "about": {
     "definition": "ASSIQUOT è una piattaforma web per intermediari assicurativi italiani: agenti, broker e collaboratori di sezione E. Fa la preventivazione automatica RC Auto, Moto e Autocarri su più compagnie, l'emissione e la gestione delle polizze, gli incassi, le provvigioni, le anagrafiche e la comunicazione con il cliente. Ogni agenzia ha la sua istanza, con nome, logo e dominio propri.",
     "facts": [
-      { "term": "Per chi", "detail": "Agenti e broker (sezioni A e B del RUI) e i loro collaboratori (sezione E), da soli o in rete." },
-      { "term": "Prodotti", "detail": "RC Auto, Moto, Autocarri, CVT standalone e prodotti personalizzati con quotazione inserita a mano." },
-      { "term": "Compagnie", "detail": "19 tariffe base e 3 in convenzione (Allianz, Generali Cargo, VHV Assicurazioni)." },
-      { "term": "Preventivo", "detail": "Dalla targa, con ricerca automatica su ANIA: contraente, marca, modello e cilindrata, dove disponibili." },
-      { "term": "Pagamenti", "detail": "Bonifico sull'IBAN dell'agenzia, carta con Stripe o Nexi, PayPal e 3 o 4 rate con Maryan Pay." },
-      { "term": "Attivazione", "detail": "Nessuna installazione: sei blocchi di dati e l'istanza è pronta in pochi giorni." }
+      {
+        "term": "Per chi",
+        "detail": "Agenti e broker (sezioni A e B del RUI) e i loro collaboratori (sezione E), da soli o in rete."
+      },
+      {
+        "term": "Prodotti",
+        "detail": "RC Auto, Moto, Autocarri, CVT standalone e prodotti personalizzati con quotazione inserita a mano."
+      },
+      {
+        "term": "Compagnie",
+        "detail": "19 tariffe base e 3 in convenzione (Allianz, Generali Cargo, VHV Assicurazioni)."
+      },
+      {
+        "term": "Preventivo",
+        "detail": "Dalla targa, con ricerca automatica su ANIA: contraente, marca, modello e cilindrata, dove disponibili."
+      },
+      {
+        "term": "Pagamenti",
+        "detail": "Bonifico sull'IBAN dell'agenzia, carta con Stripe o Nexi, PayPal e 3 o 4 rate con Maryan Pay."
+      },
+      {
+        "term": "Attivazione",
+        "detail": "Nessuna installazione: sei blocchi di dati e l'istanza è pronta in pochi giorni."
+      }
     ]
   }
 }

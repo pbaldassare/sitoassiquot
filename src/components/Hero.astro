@@ -18,10 +18,8 @@ const tape = [...r.base, ...r.convention].map((name) => ({
 <section id="hero" class="relative overflow-hidden" aria-labelledby="hero-title">
   <div class="container-content grid gap-12 pt-10 pb-16 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:items-center lg:gap-14 lg:pt-16 lg:pb-24">
     <div>
-      <h1 id="hero-title" class="display h-display text-navy-800">
-        <span class="block">{h.titleA}</span>
-        <span class="block text-crimson-700">{h.titleB}</span>
-        <span class="block">{h.titleC}</span>
+      <h1 id="hero-title" class="display text-[clamp(2.25rem,1.3rem+2.6vw,3.625rem)] leading-[1.06] text-navy-800">
+        {h.titleA} <span class="text-crimson-700">{h.titleB}</span>{' '}{h.titleC}
       </h1>
       <p class="lead mt-7 text-steel">{h.subtitle}</p>
       <div class="mt-9 flex flex-col gap-3 sm:flex-row">
